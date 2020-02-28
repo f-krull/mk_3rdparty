@@ -1,10 +1,10 @@
 modules := $(modules) \
 	sqlite
 
-LIBVER := autoconf-3310100
+LIBVER_sqlite := autoconf-3310100
 
 .PHONY: sqlite_download
-sqlite_download: download/sqlite-${LIBVER}.tar.gz
+sqlite_download: download/sqlite-${LIBVER_sqlite}.tar.gz
 
 .PHONY: sqlite_build
 sqlite_build: sqlite/bin/sqlite3
@@ -16,18 +16,18 @@ sqlite_clean:
 
 .PHONY: sqlite_dlclean
 sqlite_dlclean:
-	$(RM) download/sqlite-${LIBVER}.tar.gz
+	$(RM) download/sqlite-${LIBVER_sqlite}.tar.gz
 
-download/sqlite-${LIBVER}.tar.gz:
+download/sqlite-${LIBVER_sqlite}.tar.gz:
 	mkdir -p download/
-	cd download && wget https://www.sqlite.org/2020/sqlite-${LIBVER}.tar.gz
+	cd download && wget https://www.sqlite.org/2020/sqlite-${LIBVER_sqlite}.tar.gz
 
-sqlite/bin/sqlite3: download/sqlite-${LIBVER}.tar.gz
+sqlite/bin/sqlite3: download/sqlite-${LIBVER_sqlite}.tar.gz
 	mkdir -p sqlite_build \
 		&& cd sqlite_build \
-		&& tar xf ../download/sqlite-${LIBVER}.tar.gz \
-		&& cd sqlite-$(LIBVER) \
+		&& tar xf ../download/sqlite-${LIBVER_sqlite}.tar.gz \
+		&& cd sqlite-$(LIBVER_sqlite) \
 		&& ./configure --prefix=$(BASEDIR)/sqlite --without-bzip2
-	$(MAKE) -C sqlite_build/sqlite-$(LIBVER)
-	$(MAKE) -C sqlite_build/sqlite-$(LIBVER) install
+	$(MAKE) -C sqlite_build/sqlite-$(LIBVER_sqlite)
+	$(MAKE) -C sqlite_build/sqlite-$(LIBVER_sqlite) install
 	$(RM) -r sqlite_build
