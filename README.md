@@ -11,8 +11,8 @@ make
 
 ## Use in another project
 
- * Copy `mk_3rdparty/make_X.mk` for all tools you need into your project.
- * Copy `3rdparty/Makefile` into your project and remove `include make_X.mk` for all tools that are not needed.
+ 1. Copy `mk_3rdparty/make_X.mk` for all tools you need into your project.
+ 2. Copy [`3rdparty/Makefile`](./3rdparty/Makefile) into your project and remove `include make_X.mk` for all tools that are not needed.
 
 ## List of tools
 
@@ -24,18 +24,13 @@ make
  
 ## Add a new tool
 
- * create a new `mk_3rdparty/make_X.mk`
- * add `include make_X.mk` to `3rdparty/Makefile`
+ 1. create a new `mk_3rdparty/make_X.mk`
+ 2. add `include make_X.mk` to[`3rdparty/Makefile`](./3rdparty/Makefile)
 
 ## Offline mode (TSD)
 
-Run
-```
-make prepare_offline
-```
-all source packages will be downloaded to `3rdparty/download/`.
+ 1. Run `make prepare_offline`. All source packages will be downloaded to `3rdparty/download/`.
+ 2. Copy everything to the offline machine and run `make`.
 
-Copy to offline machine and run `make`.
 
-## 
 
