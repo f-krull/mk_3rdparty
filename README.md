@@ -6,7 +6,7 @@ Makefiles that install a few tools locally. Used for other projects
 ```
 git clone https://github.com/LCBC-UiO/mk_3rdparty
 cd mk_3rdparty
-make -j5
+make
 ```
 
 ## Use in another project
@@ -34,6 +34,8 @@ Run
 make prepare_offline
 ```
 all source packages will be downloaded to `3rdparty/download/`.
+
+Copy to offline machine and run `make`.
 
 ## 
 
