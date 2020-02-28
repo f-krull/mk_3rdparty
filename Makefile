@@ -7,7 +7,7 @@ prepare_offline:
 
 .PHONY: 3rdparty
 3rdparty:
-	$(MAKE) -C 3rdparty lighttpd_build
+	$(MAKE) -C 3rdparty all
 
 .PHONY: distclean
 distclean:
