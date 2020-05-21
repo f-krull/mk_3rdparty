@@ -9,6 +9,7 @@ include make_busybox.mk
 include make_jq.mk
 include make_lighttpd.mk
 include make_postgresql.mk
+include make_php.mk
 include make_sqlite.mk
 
 all: $(addsuffix _build, $(modules))
