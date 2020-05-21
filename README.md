@@ -20,6 +20,7 @@ make
  * jq
  * lighttpd
  * postgresql
+ * php
  * sqlite 
  
 ## Add a new tool
