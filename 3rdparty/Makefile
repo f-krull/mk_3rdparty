@@ -6,6 +6,7 @@ _add: all
 modules := 
 
 include make_busybox.mk
+include make_gnuparallel.mk
 include make_jq.mk
 include make_lighttpd.mk
 include make_postgresql.mk
